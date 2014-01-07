@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://Service" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:ax21="http://SAPItems/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://Service">
+    <wsdl:types>
+        <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://SAPItems/xsd">
+            <xs:complexType name="ItemsList">
+                <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="DTItemsList1" nillable="true" type="ax21:UserItem1"/>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="DTItemsList2" nillable="true" type="ax21:UserItem2"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="UserItem1">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="age" type="xs:int"/>
+                    <xs:element minOccurs="0" name="dept" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:complexType name="UserItem2">
+                <xs:sequence>
+                    <xs:element minOccurs="0" name="dept" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="name" nillable="true" type="xs:string"/>
+                    <xs:element minOccurs="0" name="voucher" nillable="true" type="xs:string"/>
+                </xs:sequence>
+            </xs:complexType>
+        </xs:schema>
+        <xs:schema xmlns:ax22="http://SAPItems/xsd" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://Service">
+            <xs:import namespace="http://SAPItems/xsd"/>
+            <xs:element name="smiSAPimprove">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="itemlist" nillable="true" type="ax21:ItemsList"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="smiSAPimproveResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax21:UserItem2"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="smiSAPRelease">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="item1" nillable="true" type="ax21:UserItem1"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="smiSAPReleaseResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element maxOccurs="unbounded" minOccurs="0" name="return" nillable="true" type="ax21:UserItem2"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="smiSAPimproveRequest">
+        <wsdl:part name="parameters" element="ns:smiSAPimprove"/>
+    </wsdl:message>
+    <wsdl:message name="smiSAPimproveResponse">
+        <wsdl:part name="parameters" element="ns:smiSAPimproveResponse"/>
+    </wsdl:message>
+    <wsdl:message name="smiSAPReleaseRequest">
+        <wsdl:part name="parameters" element="ns:smiSAPRelease"/>
+    </wsdl:message>
+    <wsdl:message name="smiSAPReleaseResponse">
+        <wsdl:part name="parameters" element="ns:smiSAPReleaseResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="smiSAPServicePortType">
+        <wsdl:operation name="smiSAPimprove">
+            <wsdl:input message="ns:smiSAPimproveRequest" wsaw:Action="urn:smiSAPimprove"/>
+            <wsdl:output message="ns:smiSAPimproveResponse" wsaw:Action="urn:smiSAPimproveResponse"/>
+        </wsdl:operation>
+        <wsdl:operation name="smiSAPRelease">
+            <wsdl:input message="ns:smiSAPReleaseRequest" wsaw:Action="urn:smiSAPRelease"/>
+            <wsdl:output message="ns:smiSAPReleaseResponse" wsaw:Action="urn:smiSAPReleaseResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="smiSAPServiceSoap11Binding" type="ns:smiSAPServicePortType">
+        <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="smiSAPimprove">
+            <soap:operation soapAction="urn:smiSAPimprove" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="smiSAPRelease">
+            <soap:operation soapAction="urn:smiSAPRelease" style="document"/>
+            <wsdl:input>
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="smiSAPServiceSoap12Binding" type="ns:smiSAPServicePortType">
+        <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+        <wsdl:operation name="smiSAPimprove">
+            <soap12:operation soapAction="urn:smiSAPimprove" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="smiSAPRelease">
+            <soap12:operation soapAction="urn:smiSAPRelease" style="document"/>
+            <wsdl:input>
+                <soap12:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap12:body use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:binding name="smiSAPServiceHttpBinding" type="ns:smiSAPServicePortType">
+        <http:binding verb="POST"/>
+        <wsdl:operation name="smiSAPimprove">
+            <http:operation location="smiSAPimprove"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="smiSAPRelease">
+            <http:operation location="smiSAPRelease"/>
+            <wsdl:input>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:input>
+            <wsdl:output>
+                <mime:content type="application/xml" part="parameters"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="smiSAPService">
+        <wsdl:port name="smiSAPServiceHttpSoap11Endpoint" binding="ns:smiSAPServiceSoap11Binding">
+            <soap:address location="http://localhost:8080/axis2/services/smiSAPService"/>
+        </wsdl:port>
+        <wsdl:port name="smiSAPServiceHttpSoap12Endpoint" binding="ns:smiSAPServiceSoap12Binding">
+            <soap12:address location="http://localhost:8080/axis2/services/smiSAPService"/>
+        </wsdl:port>
+        <wsdl:port name="smiSAPServiceHttpEndpoint" binding="ns:smiSAPServiceHttpBinding">
+            <http:address location="http://localhost:8080/axis2/services/smiSAPService"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

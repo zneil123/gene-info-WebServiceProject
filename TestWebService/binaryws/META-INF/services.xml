@@ -1,0 +1,12 @@
+<service name="FileService">
+	<description>
+	   upload binary files Web Service
+	</description>
+	<parameter name="ServiceClass">
+		binaryFileService.FileService
+	</parameter>
+	<messageReceivers>
+		<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+			class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</messageReceivers>
+</service>

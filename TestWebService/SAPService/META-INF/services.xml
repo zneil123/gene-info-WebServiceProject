@@ -1,0 +1,16 @@
+<service name="smiSAPService">
+	<description>
+		使用logging模块
+	</description>
+	<!--  引用soapmonitor模块  -->
+    <module ref="soapmonitor"/>
+	<!-- 引用logging模块 -->
+	<module ref="logging" />
+	<parameter name="ServiceClass">
+		Service.smiSAPService
+	</parameter>
+	<messageReceivers>
+		<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+			class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</messageReceivers>
+</service>

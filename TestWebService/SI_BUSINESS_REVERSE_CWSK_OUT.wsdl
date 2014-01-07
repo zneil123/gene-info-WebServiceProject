@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SI_BUSINESS_REVERSE_CWSK_OUT"
+	targetNamespace="urn:business2ecc:reverse_cwsk" xmlns:p1="urn:business2ecc:reverse_cwsk"
+	xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+	<wsdl:documentation />
+	<wsp:UsingPolicy wsdl:required="true" />
+	<wsp:Policy wsu:Id="OP_SI_BUSINESS_REVERSE_CWSK_OUT" />
+	<wsdl:types>
+		<xsd:schema targetNamespace="urn:business2ecc:reverse_cwsk"
+			xmlns="urn:business2ecc:reverse_cwsk" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:element name="MT_BUSINESS_REVERSE_CWSK_OUT_REQ"
+				type="DT_BUSINESS_REVERSE_CWSK_OUT_REQ" />
+			<xsd:element name="MT_BUSINESS_REVERSE_CWSK_OUT_RES"
+				type="DT_BUSINESS_REVERSE_CWSK_OUT_RES" />
+			<xsd:complexType name="DT_BUSINESS_REVERSE_CWSK_OUT_REQ">
+				<xsd:annotation>
+					<xsd:appinfo source="http://sap.com/xi/VersionID">dc1d58e33fd311e3aa900000003ce92a
+					</xsd:appinfo>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="ITEM" minOccurs="0" maxOccurs="unbounded">
+						<xsd:annotation>
+							<xsd:appinfo source="http://sap.com/xi/TextID">5d7066e23fd411e39e6f54c2d96c1918
+							</xsd:appinfo>
+						</xsd:annotation>
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="GatheringID" type="xsd:string">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">5d7053683fd411e3820c54c2d96c1918
+										</xsd:appinfo>
+										<xsd:documentation>收款流水号</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="City" type="xsd:string">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">5d7053693fd411e3b56354c2d96c1918
+										</xsd:appinfo>
+										<xsd:documentation>公司代码</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="Voucher" type="xsd:string">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">5d70536a3fd411e3a93e54c2d96c1918
+										</xsd:appinfo>
+										<xsd:documentation>会计凭证编号</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="GJAHR" type="xsd:string">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">5d70536b3fd411e3cf0654c2d96c1918
+										</xsd:appinfo>
+										<xsd:documentation>会计年度</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="ZRS_WRBTR1" type="xsd:string"
+									minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">5d70536c3fd411e389ea54c2d96c1918
+										</xsd:appinfo>
+										<xsd:documentation>预留金额字段1</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="ZRS_WRBTR2" type="xsd:string"
+									minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">5d70536d3fd411e3aabe54c2d96c1918
+										</xsd:appinfo>
+										<xsd:documentation>预留金额字段2</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="ZRS_WRBTR3" type="xsd:string"
+									minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">5d70536e3fd411e3812454c2d96c1918
+										</xsd:appinfo>
+										<xsd:documentation>预留金额字段3</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="ZRS_WRBTR4" type="xsd:string"
+									minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">5d70536f3fd411e3ae2354c2d96c1918
+										</xsd:appinfo>
+										<xsd:documentation>预留金额字段4</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="ZRS_CHAR1" type="xsd:string"
+									minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">5d7066de3fd411e3a1ed54c2d96c1918
+										</xsd:appinfo>
+										<xsd:documentation>预留字符字段1</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="ZRS_CHAR2" type="xsd:string"
+									minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">5d7066df3fd411e3b6f254c2d96c1918
+										</xsd:appinfo>
+										<xsd:documentation>预留字符字段2</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="ZRS_CHAR3" type="xsd:string"
+									minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">5d7066e03fd411e3b10054c2d96c1918
+										</xsd:appinfo>
+										<xsd:documentation>预留字符字段3</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="ZRS_CHAR4" type="xsd:string"
+									minOccurs="0">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">5d7066e13fd411e3925d54c2d96c1918
+										</xsd:appinfo>
+										<xsd:documentation>预留字符字段4</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:complexType name="DT_BUSINESS_REVERSE_CWSK_OUT_RES">
+				<xsd:annotation>
+					<xsd:appinfo source="http://sap.com/xi/VersionID">8dd676a941d811e2be0b0000003ce92a
+					</xsd:appinfo>
+				</xsd:annotation>
+				<xsd:sequence>
+					<xsd:element name="ITEM" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="GatheringID" type="xsd:string">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">bb075c3141d811e2928200216a81b754
+										</xsd:appinfo>
+										<xsd:documentation>收款流水号</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="City" type="xsd:string">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">bb075c3241d811e2c04100216a81b754
+										</xsd:appinfo>
+										<xsd:documentation>公司代码</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="Voucher" type="xsd:string">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">bb075c3341d811e2928f00216a81b754
+										</xsd:appinfo>
+										<xsd:documentation>会计凭证编号</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="GJAHR" type="xsd:string">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">bb075c3441d811e2bdd900216a81b754
+										</xsd:appinfo>
+										<xsd:documentation>会计年度</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="RBELNR" type="xsd:string">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">bb075c3541d811e2bae500216a81b754
+										</xsd:appinfo>
+										<xsd:documentation>冲销凭证编号</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="MSGTY" type="xsd:string">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">bb075c3641d811e2cff500216a81b754
+										</xsd:appinfo>
+										<xsd:documentation>消息类型</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+								<xsd:element name="MESTX" type="xsd:string">
+									<xsd:annotation>
+										<xsd:appinfo source="http://sap.com/xi/TextID">bb075c3741d811e284e900216a81b754
+										</xsd:appinfo>
+										<xsd:documentation>消息文本</xsd:documentation>
+									</xsd:annotation>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="MT_BUSINESS_REVERSE_CWSK_OUT_REQ">
+		<wsdl:documentation />
+		<wsdl:part name="MT_BUSINESS_REVERSE_CWSK_OUT_REQ" element="p1:MT_BUSINESS_REVERSE_CWSK_OUT_REQ" />
+	</wsdl:message>
+	<wsdl:message name="MT_BUSINESS_REVERSE_CWSK_OUT_RES">
+		<wsdl:documentation />
+		<wsdl:part name="MT_BUSINESS_REVERSE_CWSK_OUT_RES" element="p1:MT_BUSINESS_REVERSE_CWSK_OUT_RES" />
+	</wsdl:message>
+	<wsdl:portType name="SI_BUSINESS_REVERSE_CWSK_OUT">
+		<wsdl:documentation />
+		<wsdl:operation name="SI_BUSINESS_REVERSE_CWSK_OUT">
+			<wsdl:documentation />
+			<wsp:Policy>
+				<wsp:PolicyReference URI="#OP_SI_BUSINESS_REVERSE_CWSK_OUT" />
+			</wsp:Policy>
+			<wsdl:input message="p1:MT_BUSINESS_REVERSE_CWSK_OUT_REQ" />
+			<wsdl:output message="p1:MT_BUSINESS_REVERSE_CWSK_OUT_RES" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="SI_BUSINESS_REVERSE_CWSK_OUTBinding"
+		type="p1:SI_BUSINESS_REVERSE_CWSK_OUT">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+		<wsdl:operation name="SI_BUSINESS_REVERSE_CWSK_OUT">
+			<soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+			<wsdl:input>
+				<soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="SI_BUSINESS_REVERSE_CWSK_OUTService">
+		<wsdl:port name="SI_BUSINESS_REVERSE_CWSK_OUTPort" binding="p1:SI_BUSINESS_REVERSE_CWSK_OUTBinding">
+			<soap:address
+				location="  http://baomi/XISOAPAdapter/MessageServlet?channel=:BS_BUSINESS:CC_BUSINESS_SOAP_REVERSE_CWSK_OUT&amp;version=3.0&amp;Sender.Service=BS_BUSINESS&amp;Interface=urn%3Abusiness2ecc%3Areverse_cwsk%5ESI_BUSINESS_REVERSE_CWSK_OUT"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

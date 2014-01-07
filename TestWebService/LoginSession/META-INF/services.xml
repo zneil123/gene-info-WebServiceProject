@@ -1,0 +1,14 @@
+<service name="LoginService" scope="transportsession">
+	<description>
+		登录服务
+	</description>
+	<!--  引用soapmonitor模块  -->
+    <module ref="soapmonitor"/>
+	<parameter name="ServiceClass">
+		Service.LoginService
+	</parameter>
+	<messageReceivers>
+		<messageReceiver mep="http://www.w3.org/2004/08/wsdl/in-out"
+			class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
+	</messageReceivers>
+</service>
